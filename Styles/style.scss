@@ -1,0 +1,119 @@
+//Variables
+$daniel-card-color: hsl(263, 55%, 52%);
+$jonathan-card-color: hsl(217, 19%, 35%);
+$jeanette-kira-card-color: hsl(0, 0%, 100%);
+$patrick-card-color: hsl(219, 29%, 14%);
+
+@use 'reset';
+
+@mixin Flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+    @include Flex(column);
+}
+
+.container {
+    max-width: 21rem;
+}
+
+img {
+    border-radius: 50%;
+    border: 2px double;
+}
+
+@mixin MainCards() {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    // Spacing attributes
+    margin-bottom: 24px;
+    padding: 24px;
+
+    //Border attributes
+    box-shadow: 2px 2px 10px 5px hsla(220, 6%, 21%, 0.2);
+    border-radius: 8px
+}
+
+.card-main {
+    @include MainCards();
+
+    //Text attributes
+    .user-heading {
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+
+    .verified {
+        font-size: 0.75rem;
+        opacity: 0.5;
+    }
+
+    .comment-para {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        padding-bottom: 16px;
+    }
+
+    .quote-para {
+        font-size: 0.8125rem;
+        opacity: 0.7;
+    }
+}
+
+figcaption {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+    //Spacings
+    padding-bottom: 16px;
+
+    //grid-area placements
+    img {
+        grid-area: 1/1/3/2;
+        margin-right: 16px;
+    }
+
+    .user-heading {
+        grid-area: 1/2/2/3;
+  
+    }
+
+    .verified {
+        grid-area: 2/2/2/3;
+        
+    }
+}
+
+.card1 {
+    background-color: $daniel-card-color;
+    margin-top: 48px;
+}
+
+.card2 {
+    background-color: $jonathan-card-color;
+
+}
+
+.card3 {
+    background-color: $jeanette-kira-card-color;
+    color: black;
+
+}
+
+.card4 {
+    background-color: $patrick-card-color;
+
+}
+
+.card5 {
+    background-color: $jeanette-kira-card-color;
+    color: black;
+}
